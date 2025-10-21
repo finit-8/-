@@ -1,0 +1,152 @@
+public static void main(String[] args){
+  Set a = new HashSet();
+ 
+  a.add(7)
+  System.out.println(a);
+ 
+  a.add(5)
+  System.out.println(a);
+ 
+  a.add(5)
+  System.out.println(a);
+ 
+  a.remove(5)
+  System.out.println(a);
+ 
+  System.out.println(a.size());  
+ 
+} 
+출력 : 
+
+
+
+
+
+
+import java.util.(  );
+ 
+public class Test {
+ 
+  public static void main(String args[]){
+    (   ) scan = new (   ) (System.in);
+    int a = scan.nextInt();
+    int b = scan.nextInt();
+    System.out.printf("%d", a +b);
+  
+  }
+}
+2개의 정수를 입력받아 합을 출력하기 위해 괄호에 공통으로 들어갈 가장 적합한 코드 :
+
+
+
+
+public class good {
+	public static void main(String[] args){
+    	int i = 3;
+        int k = 1;
+        switch (i) {
+			case 0:
+			case 1:
+			case 2: 
+			case 3: k = 0;
+			case 4: k += 3;
+			case 5: k -= 10;
+			default: k--;
+        }
+        system.out.print(k);
+     }
+}
+출력 : -8
+
+
+
+
+
+class parent
+	public void show(){
+    	system.out.println("Parent");
+    }
+}
+
+class Child extends Parent{
+	public void show(){
+    	system.out.println("Child");
+    }
+}
+
+public class good{
+	public static void main(String[] args){
+    	Parent pa = ____  Child();
+        pa.show();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+class good {
+	public static void main (String[] args) {
+    	int[]a = new int[8];
+        int i=0; int n=10;
+        while (  1.  ) {
+        	a[i++] = (  2.  );
+            n /= 2;
+        }
+        for(i=7; i>=0; i--){
+            System.out.print(a[i]);
+        }
+     }
+  }
+[출력결과] : 00001010
+
+
+
+
+
+
+
+public class good {
+	public static void main(String[] args) {
+    	int[][]a = new int[(1.)][(2.)];
+        for(int i = 0; i <3; i++){
+        for(int j=0; j < 5; j++){
+        a[i][j] = j*3+(i+1);
+        	System.out.print(a[i][j]+"");
+         }
+         System.out.println();
+       }
+     }
+   }     
+   
+   
+   
+  
+  
+
+
+
+class parent{
+	public int compute(int num){
+    	if(num <=1) return num;
+        return compute(num-1) + compute(num-2);
+    }
+}
+class Child extends parent {
+ 	public int compute(int num){
+    	if(num<=1) return num;
+        	return compute(num-1) + compute(num-3);				
+    }
+}
+class good{
+  	public static void main (String[] args){
+    parent obj = new Child();
+    System.out.print(obj.compute(4));
+    }
+}
+출력 : 

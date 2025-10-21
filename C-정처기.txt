@@ -1,0 +1,306 @@
+#include <stdio.h>
+void main(){
+  float a = 7.9;
+ 
+  printf("%f\n", a);
+  printf("%.3f\n", a);
+  printf("%6.2f\n", a);
+ 
+}
+
+
+
+
+
+#include <iostream>
+using namespace std;
+void main(){
+  char a = 'A'
+  int b = 7;
+  
+  cout << a << endl << b;
+ 
+}
+
+
+
+
+
+#include <stdio.h>
+void ary(int a[]){
+  int temp;
+  for(int i=0;i<4;i++)	
+    for(int j=0;j<4-i;j++)
+      if(a[j]>a[j+1]){
+        temp=a[j];
+        a[j]=a[j+1];
+        a[j+1]=temp;
+      }
+}
+ 
+ int main() {
+   int a[]={85, 75, 50, 100, 95};
+   ary(a);
+   for(int i=0;i<5;i++)
+     printf("%d",a[i]);
+}
+
+
+
+
+
+#include <iostream>
+print Value{
+  a,
+  b,
+  c = 7,
+  d
+};  
+ 
+void main(){
+  print Value value;
+  value = d;
+  std::cout << value;  
+}
+
+
+
+
+
+
+#include <stdio.h>
+struct stName {
+    char nael[12];
+    int os, db, hab, hhab;
+};
+int main() {
+    struct stName st[3] = { {"stName1", 95, 88}, {"stName2", 84, 91}, {"stName3", 86, 75} };
+    struct stName* p;
+    p = &st[0];
+ 
+    (p + 1)->hab = (p + 1)->os + (p + 2)->db;
+    (p + 1)->hhab = (p + 1)->hab + p->os + p->db;
+ 
+    printf("%d", (p + 1)->hab + (p + 1)->hhab);
+}
+
+
+
+
+
+#include <stdio.h>
+void main(){
+  int a[5] = {3,1};
+  int i;
+ 
+  for(i=0; i<5; i++)
+    printf("%d\n", a[i]);
+}
+
+
+
+
+
+#include <stdio.h>
+int main() {
+    struct ary {
+        char name[10];
+        int age;
+    } a[] = { {"Kim", 28}, {"Lee", 38}, {"Park", 42}, {"Choi", 31} };
+ 
+    struct ary* p;
+    p = a;
+    p++;
+    printf("%s\n", p->name);
+    printf("%d\n", p->age);
+}
+
+
+
+
+
+
+#include <stdio.h>
+main(){
+  char inputData [50];
+  scanf("%s", inputData );
+  printf("%.4s", inputData );
+  printf("%3.2s", inputData );
+}
+입력 : Hello, World
+출력 :
+ 
+
+
+
+
+
+
+
+#include <stdio.h>
+main(){
+ 
+  float a = 3.45678f;
+  double b = 0.0561214;
+  (     )
+  
+출력 : [a]=3.46 / [b]=5.612e-02
+괄호안에 입력은? (단, 한 개의 식으로 작성)
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+main(){
+ 
+  int i, j;
+  scanf("%o#x", &i, &j);
+  printf(w"%d %d", i, j)
+  
+입력 : 15#22
+출력은 ?
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #include <stdio.h>
+ 
+int main() {
+    int ary[3];
+    int s = 0;
+ 
+    *(ary + 0) = 1;					==> 
+    ary[1] = *(ary + 0) + 2;		==> 
+    ary[2] = *ary + 3;				==> 
+ 
+    for (int i = 0; i < 3; i++)
+        s = s + ary[i];				==> 
+ 
+    printf("%d", s);				==> 
+}
+출력:
+
+
+
+
+
+
+#include <stdio.h>
+main(){
+  int i = 5, j = 5, k = 20;
+  i /= j;		1
+  j -= i;		4
+  k %= j;		0
+  printf("%d, %d, %d\n", i, j, k);
+
+}
+출력:
+
+
+
+
+
+#include <stdio.h> 
+#include <stdlib.h> 
+struct node { 
+	int p; 
+	struct node* n; 
+};
+ 
+int main() { 
+	struct node a = {1, NULL}; 
+	struct node b = {2, NULL}; 
+	struct node c = {3, NULL}; 
+	
+	a.n = &b; b.n = &c; c.n = NULL; 					
+	c.n = &a; a.n = &b; b.n = NULL; 					
+	struct node* head = &c; 
+	printf("%d %d %d", head->p, head->n->p, head->n->n->p); 		
+	return 0; 
+}
+출력: 
+
+
+
+
+
+#include <stdio.h>
+void main(){
+	int i,j;
+	int temp;
+	int a[5] = {75,95,85,100,50};
+
+	for(i=0; i<4; i++){	
+		for(j=0; j<4-i; j++){
+			if(a[j] > a[j+1]){			
+				temp=a[j];
+				a[j] = a[j+1];
+				a[j+1] = temp;
+			 }
+		   }
+		}
+		
+	for(i=0; i<5; i++){
+		printf("%d", a[i]);
+	}
+}
+출력 : 
+  
+  
+  
+
+
+https://chatgpt.com/c/68eee239-0314-8324-8deb-671124bca62c
+#include <stdio.h> 
+#include <stdlib.h>   
+struct node {     
+	char c;     
+	struct node* p; 
+};   
+
+struct node* func(char* s) {     
+	struct node* h = NULL, *n;          							
+	while(*s) {         
+		n = malloc(sizeof(struct node));         
+		n->c = *s++;         
+		n->p = h;         
+		h = n;    
+	}          
+	return h; 
+}   
+
+int main() {     
+	struct node* n = func("BEST");          
+	while(n) {         						
+		putchar(n->c);         				
+		struct node* t = n;         
+		n = n->p;         
+		free(t);     
+	}          
+	return 0; 
+}
+
+
+
+
+
+
+
+
+#include <stdio.h>
+void main(){
+	char *p = "KOREA"
+    printf("%s\n" , p);
+    printf("%s\n" , p+3);
+    printf("%c\n" , *p);
+    printf("%c\n" , *(p+3));
+    printf("%c\n" , *p+2);
