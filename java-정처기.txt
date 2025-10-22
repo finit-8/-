@@ -104,9 +104,7 @@ class good {
      }
   }
 [출력결과] : 00001010
-
-
-
+1. 2.
 
 
 
@@ -115,14 +113,19 @@ public class good {
 	public static void main(String[] args) {
     	int[][]a = new int[(1.)][(2.)];
         for(int i = 0; i <3; i++){
-        for(int j=0; j < 5; j++){
-        a[i][j] = j*3+(i+1);
-        	System.out.print(a[i][j]+"");
-         }
-         System.out.println();
-       }
-     }
-   }     
+			for(int j=0; j < 5; j++){
+				a[i][j] = j*3+(i+1);
+				System.out.print(a[i][j]+" ");
+        }
+			System.out.println();
+        }
+    }
+}
+[출력결과] 
+1 4 7 10 13
+2 5 8 11 14
+3 6 9 12 15 
+1. 2.
    
    
    
@@ -149,4 +152,119 @@ class good{
     System.out.print(obj.compute(4));
     }
 }
+출력 :
+
+
+
+
+
+
+public class good {
+	public static void main(String[] args){
+		int i, j;
+		for(j=0, i=0; i<=5; i++){
+			j+=i;					
+			System.out.print(i);	
+			if(i==5){
+				System.out.print("=");	
+				System.out.print(j);		
+			} else{
+				System.out.print("+");
+			}
+	    }
+	}
+}
+
+
+
+
+클래스 내에서 객체 생성 없이 사용할 수 있는 메소드로써 (	)에 들어갈 코드
+public class Test {
+   public static void main(String[] args){
+      system.out.print(Test.check(1));
+   }
+   (    )  String check (int num) {
+      return (num >= 0) ? "positive" : "negative";
+   }
+}
+[출력결과]
+positive
+
+
+
+
+
+public class ovr1 {
+	public static void main(String[] args){
+    	ovr1 a1 = new ovr1();
+        ovr2 a2 = new ovr2();
+        System.out.println(a1.sun(3,2) + a2.sun(3,2));
+    }
+    int sun(int x, int y){
+    	return x + y;
+    }
+}
+class ovr2 extends ovr1 {
+	int sun(int x, int y){
+    	return x - y + super.sun(x,y);
+    }
+}
+출력 :
+
+
+
+
+
+
+class Connection {
+	private static Connection _inst = null;
+	private int count = 0;
+	static public Connection get() {
+		if(_inst == null) {
+			_inst = new Connection();
+			return _inst; 
+		}
+		return _inst;
+	}
+	public void count() { count ++; }
+	public int getCount() { return count; }
+}
+public class testcon {
+	public static void main(String[] args) {
+		Connection conn1 = Connection.get();
+		conn1.count();
+		Connection conn2 = Connection.get();
+		conn2.count();
+		Connection conn3 = Connection.get();
+		conn3.count();
+		System.out.print(conn1.getCount());
+	}
+}
 출력 : 
+
+
+
+
+
+
+
+public class testco {
+	public static void main(String[] args) {
+		int a = 3, b = 4, c = 3, d = 5;
+		if((a == 2 | a == c) & !(c > d) & (1 == b ^ c != d)) {
+			a = b + c;
+			if(7 == b ^ c != a) {
+				System.out.println(a);
+			} else {
+				System.out.println(b);
+			}
+		} else {
+			a = c + d;
+				if(7 == c ^ d != a) {
+					System.out.println(a);
+				} else {
+					System.out.println(d);
+				}
+		}
+	}
+}
