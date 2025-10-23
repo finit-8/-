@@ -69,3 +69,31 @@ pirnt(result)
 a,b = 100, 200 
 print(a==b)
 출력 : 
+
+
+
+
+
+def exam(num1, num2=2):
+print('a=', num1, 'b=', num2)
+exam(20)
+
+
+
+
+
+	 0123456789 10 11 12 13 14 15 16
+a = "REMEMBER N  O V  E  M  B  E  R"
+b = a[:3] + a[12:16];
+c = "R AND %s" % "STR";
+print(b+c)
+출력 : 
+
+
+
+
+
+TestList = [1,2,3,4,5]
+TestList = list(map(lambda num : num + 100, TestList)))
+print(TestList)
+출력 : 
