@@ -362,3 +362,70 @@ int []arr = [77,32,10,99,50];
 	}
 }
 출력 : 
+
+
+
+
+
+
+public class Soojebi {
+	public static void main(String[] args) {
+		int sum = fact(5);
+		System.out.println(sum);
+	}
+	public static int fact(int n) {
+		if(n <= 2) {
+			return 1;
+		} else {
+			return fact(n-2) + fact(n-1);		
+		}											
+	}
+}
+출력 : 
+
+
+
+
+
+class Soojebi {
+		static private Soojebi instance = null;
+		private int count = 0;
+		static public Soojebi get(int x){
+			if(instance == null) {
+				instance = new Soojebi();
+			}
+			instance.count += x;
+			return instance;
+		}
+		public void count(){count++;}
+		public int getCount(){return instance.count;}
+}
+public class Soojebi2 {
+	public static void main(String[] args) {
+		Soojebi s1 = Soojebi.get(2);
+		s1.count();						
+		Soojebi s2 = Soojebi.get(3);
+		s2.count();						
+		System.out.println(s1.getCount());
+	}
+}
+
+
+
+
+
+______ class Animal{
+	______ void show();
+}
+class Dog extends Animal{
+	void show(){
+		System.out.print("dog");
+	}
+}
+public class Soojebi {
+	public static void main(String[] args) {
+		Animal d = new Dog();
+		d.show();
+	}
+}
+출력결과 : dog
