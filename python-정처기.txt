@@ -125,3 +125,29 @@ while i < 7:
 	else:
 		sum *= i
 print(sum)
+
+
+
+
+
+
+a = "%s%s" % ("soojebi"[0:2], "soojebi"[3:4])
+b = 1111
+print("%s%d" % (a*2, b*2))
+출력 :
+
+
+
+
+
+
+def soojebi(begin, diff, n):
+	cnt=1
+	ret=begin				
+	while true:
+		cnt+=1				
+		ret*=diff			
+		if cnt == n:		
+			return ret
+print(soojebi(1, 3, 4))
+출력 :
