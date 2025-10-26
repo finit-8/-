@@ -498,4 +498,116 @@ public class Soojebi{
 	}
 }
 출력 :
+
+
+
+
+
+public class Soojebi{
+	public static void main(String[] args){
+		Set h = new HashSet();
+		h.add(2);
+		System.out.print(h);
+		h.add(1);
+		System.out.print(h);
+		h.add(1);
+		System.out.print(h);
+		h.remove(1);
+		System.out.print(h);
+		System.out.print(h.size());
+	}
+}
+출력 : 	
+
 		
+		
+		
+		
+		
+		
+★★★		
+public class Soojebi{
+	static int func(int n){
+		return n*9;
+	}
+	static int func(int a, int b){
+		return a*b;
+	}
+	public static void main(String[] args){
+		System.out.printf("%x", func(5)+func(2,3));
+	}
+}
+출력 : 
+
+
+
+
+
+
+
+★★★
+public class Soojebi{
+	public static void main(String[] args){
+		int i, j=0, sum=0;
+		for(i=1; i<=110; i++){
+			if(i%4 == 0) {			
+				sum += 1;			
+				j=i;				
+			}
+		}
+		System.out.print(i+j+sum);
+	}
+}
+출력 :
+
+
+
+
+
+
+★★★
+class A{
+	A(){
+		this(10);
+		System.out.print("A");
+	}
+	A(int x){System.out.print("B"+x);}
+	void display(){System.out.print("C");}
+}
+class B extends A{
+	B(){System.out.print("D");}
+	B(String m){System.out.print("E");}
+	void display(){System.out.print("F");}
+}
+public class Soojebi{
+	public static void main(String[] args){
+		A x = new A();
+		x.display();
+	}
+}
+출력 :
+
+
+
+
+
+
+public class Soojebi{
+	public static void main(String[] args){
+		int[] a = {56, 4, 3, 65, 78};
+		int temp;
+		for(int i = 0; i < 1; i++){
+			for(int j = 0; j < a.length-i-1; j++){
+				if(a[j]>a[j+1]){
+					temp = a[j];
+					a[j] = a[j+1];
+					a[j+1] = temp;
+				}
+			}
+		}
+		for(int i = 0; i < a.length; i++) {
+			System.out.print(a[i] + " ");
+		}
+	}
+}
+출력 : 
