@@ -664,28 +664,28 @@ int main() {
 #include <stdio.h>
 void fn(int *a, int b){
 	int temp = 0;
-	temp = *a;					
-	*a = b;						
-	b = temp+1;					
+	temp = *a;								
+	*a = b;									
+	b = temp+1;								
 }
 int main(){
 	int a = 10, b = 5;
-	fn(&a, b);
-	printf("%d %d\n", a, b);
+	fn(&a, b);								
+	printf("%d %d\n", a, b);				
 	return 0;
 }
 출력 : 
 
 #include <stdio.h>
-char* fn*(char* p){
-	p++;
+char* fn*(char* p){							
+	p++;									
 	return p;
 }
 int main(){
-	char a[] = "abcd";
-	char* p = a;
-	printf("%s\n", fn(p));
-	printf("%s\n", p);
+	char a[] = "abcd";						
+	char* p = a;							
+	printf("%s\n", fn(p));					
+	printf("%s\n", p);						
 	return 0;
 }
 출력 : 
@@ -751,7 +751,7 @@ int main(){
 	for( ; i<4; ){
 		switch(i%2){
 		case 0:
-			sum+=i;
+			sum+=i;		
 		default:
 			sum+=i;		
 		}
@@ -771,8 +771,8 @@ int main(){
 #include <stdio.h>
 int Soojebi(int num) {			
 	int i;
-	for(i=2; i<num; i++){		
-		if(num % i == 0)			
+	for(i=2; i<num; i++){
+		if(num % i == 0)		
 			return 0;
 	}
 	return 1;
@@ -780,8 +780,287 @@ int Soojebi(int num) {
 int main(){
 	int num=7, cnt=0, i;
 	for(i=2; i<num; i++)
-		cnt += Soojebi(i);		
+		cnt += Soojebi(i);
 	printf("%d\n", cnt);
 	return 0;
+}
+출력 : 
+
+
+
+
+
+
+★★★
+#include <stdio.h>
+int fn(int x){
+	int i, sum;
+	for(i=0, sum=1; i<x; ++i, sum *= i);			
+		return sum;
+}
+	sum=1;
+	while(i<x){					
+		i++;					
+		sum *= i;			
+	}		
+int main(){
+	printf("%d", fn(4));
+	return 0;
+}
+출력 : 
+
+
+
+
+
+1~6사이의 숫자를 10번 임의 생성하여 각 숫자가 몇번 발생했는지 hist배열에 저장 출력하는 코드로, 빈칸 완성
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(){
+	int hist[6] = {0, };
+	int n, i=0;
+	srand(time(NULL));
+	
+	do{
+		i++;
+		n = rand()%6+1;					
+		hist[____] += 1;				
+	} while(i<10);
+	
+	for(i=0; i<6; i++)
+		printf("hist[%d] = %d\n", i+1, ____);
+	return 0;
+}
+
+
+
+
+
+
+
+
+#include <stdio.h>
+int main(){
+	int i, j;
+	int sum = 0;
+	int arr[3][3];
+	
+	for(i=0; i<3; i++){
+		for(j=0; j<3; j++){
+			arr[i][j] = i+j;		
+										
+			if(i%2 == 0){
+				sum += arr[i][j];		
+			}
+			else{
+				sum -= arr[i][j];		
+			}
+		}
+	}
+	printf("%d", sum);
+}
+출력 : 
+
+
+
+
+
+
+#include <stdio.h>
+struct Soojebi{
+	int x;
+	int j;
+};
+int main(){
+	struct Soojebi p1 = {1, 2};
+	struct Soojebi p2 = {3, 4};
+	struct Soojebi *p3 = &p1;
+	int result = p3->x + p3->y + p2.y;
+	printf("%d\n", result);
+	return 0;
+}
+출력 :
+
+
+
+
+
+
+★★★
+#include <stdio.h>
+int main(){
+	char x[3] = "Hi", i=0;
+	for( ;x[i]; )
+		printf("%d", x[++i]);
+	return 0;
+}
+출력 :
+
+
+
+
+
+
+#include <stdio.h>
+int main(){
+	int a = 1, b = 3;
+	switch(++a + b){
+	case 3 : printf("A");
+	case 4 : printf("B");
+		break; 
+	case 5 : printf("C");
+	default : printf("E");
+	}
+	return 0;
+}
+출력 : 
+
+
+
+
+
+
+
+★★★
+#include <stdio.h>
+int main(){
+	int x[3][2][26] = {0};
+	char y[3][7] = {"Apple", "Banana", "Camera"};
+	int i, j, k;
+	
+	for(i=0; i<3; i++){											
+		for(j=5; j>=0; j--){									
+			if(y[i][j] >= 'A' && y[i][j] <= 'Z'){				
+				x[i][0][y[i][j]-'A']++;							
+			} else(y[i][j] >= 'a' && y[i][j] <= 'z'){			
+				x[i][1][y[i][j]-'a']++;							
+		}	
+	}
+	for(i=0; i<3; i++){
+		for(j=0; j<2; j++){
+			for(k=0; k<26; k++){
+				if(x[i][j][k] >= 2){
+					printf("%d%d%d\n", i, j, k);				
+				}
+			}
+		}
+	}
+	return 0;
+}
+출력 : 
+
+
+
+
+
+
+
+값을 10개 입력받아 가장 작은 값을 출력하는 코드, 빈 칸에 알맞는 코드는?
+#include <stdio.h>
+int main(){
+	int num[10];
+	int min = 9999;
+	int i;
+	for(int i=0; i<10; i++){
+		scanf("%d", &num[i]);			
+	}
+	for(int i=0; i<10; i++){			
+		if(min > _____){				
+			min = num[i];
+		}
+	}
+	printf("%d", min);
+	return 0;
+}
+
+
+
+
+
+
+
+★★★
+#include <stdio.h>
+int main(){
+	char x[100]="";
+	int i;
+	for(int i=0; i<99; i++){
+		x[i] = i;				
+	}
+	x['B']+=1;					
+	x['A']+=x['B']-'B';			
+	x['D']+=('g'-'a');			
+	x['G'+1]=0;					
+	printf("%s", x+'A');		
+	return 0;
+}
+출력 :
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+typedef struct{
+	int acc;
+	double bal;
+}Acc;
+double fn(double b, int y){						
+	int i;
+	double r = 1.0;
+	for(i=0; i<y; i++){
+		r*=b;
+	}
+	return r;									
+}
+void init(Acc *a, int x, double y){				
+	a->acc = x;									
+	a->bal = y;									
+}
+void A(Acc *a, double en){										
+	a->bal += (en > 0 && en < a->bal) ? -en : en;				
+}
+void B(Acc *a){													
+	a->bal *= fn((1+0.1), 1);									
+}
+int main(){
+	Acc ba;										
+	init(&ba, 200, 100.0);						
+	A(&ba, ba.bal);								
+	B(&ba);										
+	printf("%d and %.2f", ba.acc, ba.bal);		
+	return 0;
+}
+출력 : 
+
+
+
+
+
+
+
+
+#include <stdio.h>
+int main(){
+	int i, j;
+	int temp;
+	int a[5] = {14, 22, 53, 45, 1};
+	for(i=0; i<2; i++){								
+		for(j=0; j<4-i; j++){						
+			if(a[j] > a[j + 1]){					
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+		}
+	}
+	for(i=0; i<3; i++){				
+		printf("%d", a[i]);
+	}
 }
 출력 : 

@@ -58,7 +58,7 @@ result = 0
 for i in range(1,3);
    result = a >> i
    result = result + 1
-pirnt(result)
+print(result)
 출력 : 
 
 
@@ -168,7 +168,56 @@ class B(A):
 	def fn(self, x, y):
 		print("{0}{1}{2}".format(self.x,x,y))
 
-a = A("HI")
-a.fn("J")
-b=B("ST")
-b.fn("UV", "W")
+a = A("HI")				
+a.fn("J")				
+b=B("ST")				
+b.fn("UV", "W")			
+
+
+
+
+
+
+
+x = [5, 4, 3, 2, 1]
+x = List(map(lambda num: num + 100 if num % 2 == 0 else num * 2, x))
+print(x)
+
+
+
+
+
+★★★
+x = [97, 98, 0]
+print(all(x))			
+print(any(x))			
+print(chr(x[1]))		
+print(divmod(5,2))		
+출력 : 
+
+
+
+
+
+
+★★★
+x = [1, 2, 3, 4, 5, 6, 7]
+print(x.pop())
+print(x.pop(-3))
+print(x.pop(2))
+출력 : 
+
+
+
+
+
+
+try:
+	x = 4/2
+except ZeroDivisionError:
+	print("A")
+else:
+	print("B")
+finally:
+	print("C")
+출력 :

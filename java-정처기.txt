@@ -517,8 +517,7 @@ public class Soojebi{
 		System.out.print(h.size());
 	}
 }
-출력 : 	
-
+출력 : 
 		
 		
 		
@@ -550,9 +549,9 @@ public class Soojebi{
 	public static void main(String[] args){
 		int i, j=0, sum=0;
 		for(i=1; i<=110; i++){
-			if(i%4 == 0) {			
+			if(i%4 == 0) {				
 				sum += 1;			
-				j=i;				
+				j=i;					
 			}
 		}
 		System.out.print(i+j+sum);
@@ -611,3 +610,125 @@ public class Soojebi{
 	}
 }
 출력 : 
+
+
+
+
+
+
+class Book1{
+	String name = "Book1";
+	void setName(String name){
+		this.name = name;
+	}
+	String getName(){
+		return name;
+	}
+}
+class Book2 extends Book1{
+	String name = "Book2";
+	void setName(String name){
+		super.name = name;
+	}
+	String getName(){
+		return name;
+	}
+}
+class Soojebi{
+	public static void main(String[] args){
+		Book1 a = new Book2();
+		Book2 b = new Book2();
+		a.setName("Book3");
+		b.setName("Book4");
+		System.out.print(a.getName());
+		System.out.print(b.getName());
+		System.out.print(a.name);
+	}
+}
+출력 : 
+
+
+
+
+
+
+
+★★★
+class Parent {
+    int x = 100;
+    Parent() {
+        this(500);
+    }
+    Parent(int x) {
+        this.x = x;
+    }
+    int getX() {
+        return x;
+    }
+}
+class Child extends Parent {
+    int x = 4000;
+    Child() {
+        this(5000);
+    }
+    Child(int x) {
+        this.x = x;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        System.out.println(obj.getX());
+    }
+}
+
+abstact class Vehicle {
+    String name;
+    abstract public String getName(String val);
+    public String getName() {
+		return "Vehicle name: " + name;
+    }
+}
+class Car extends Vehicle {
+    public Car(String val) {
+        name=super.name=val;
+    }
+    public String getName(String val) {
+        return "Car name:" + val;
+    }
+    public String getName(byte val[]) {
+        return "Car name:" + val;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+    Vehicle obj = new Car("Spark");
+    System.out.println(obj.getName());
+    }
+}
+
+class Soojebi{
+	void make(){
+		System.out.println("Welcome to Soojebi");
+	}
+}
+class Jebi extends Soojebi{
+	void make(){
+		System.out.println("Wow");
+	}
+	void make(String message){
+		System.out.println("message");
+	}
+}
+public class Soojebi2{
+	public static void main(String[] args){
+		Soojebi a = new Soojebi();
+		Soojebi b = new Jebi();
+		Jebi c = new Jebi();
+		a.make();
+		b.make();
+		c.make();
+		c.make("Hello");
+	}
+}
+출력 :
