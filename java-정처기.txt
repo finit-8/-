@@ -732,3 +732,133 @@ public class Soojebi2{
 	}
 }
 출력 :
+
+
+
+
+
+
+
+
+class Parent {
+    int compute(int num) {
+        if(num <= 1)
+            return num;
+        return compute(num-1) + compute(num-2);
+    }
+}
+class Child extends Parent {
+    int compute(int num) {
+        if(num <= 1)
+            return num;
+        return compute(num-1) + compute(num-3);
+    }
+}
+public class main {
+    public static void main(String args[]) {
+        Parent obj = new Child();
+        System.out.print(obj.compute(7));
+    }
+}
+출력 : 
+
+
+
+
+
+
+
+다음은 에러가 발생하는 코드이다. 발생하는 위치와 원인은?
+class Person {
+    private String name;
+    public Person(String val) {
+        name = val;
+    }
+    public static String get() {
+    return name;
+    }
+    public void print() {
+        System.out.println(name);
+    }
+}
+public class main {
+    public static void main(String[] args) {
+        Person obj = new Person("Kim");
+        obj.print();
+    }
+}
+
+
+
+
+
+★★★
+public class Soojebi{
+	public static void main(String[] args){
+		String str = "HelloSoojebiJava";
+		String result = str.substring(0, 5).toLowerCase() + str.substring(5, 10).toUpperCase() + str.substring(10).replace('a', '@');
+		System.out.println(result);
+	}
+}
+출력 : 
+
+
+
+
+
+
+★★★
+import java.util.Arrays;
+import java.util.List;
+public class Soojebi{
+	public static void main(String[] args){
+		List<String> words = Arrays.asList("apple", "bird", "captain", "day");
+		words.stream()
+			.filter(w->w.contains("a") && w.length() > 5)			
+			.map(w->w.toUpperCase().replace('A', '@'))				
+			.forEach(w->System.out.print(w+" "));					
+	}
+}
+출력 :
+
+
+
+
+
+
+★★★
+public class Soojebi{
+	public static void main(String[] args){
+		TreeSet set = new TreeSet();
+		set.add(89);
+		set.add(32);
+		set.add(71);
+		System.out.print(set.headSet(50));
+		System.out.print(set.tailSet(50));	
+	}
+}
+출력 : 
+	
+	
+	
+	
+
+public class Soojebi{
+	public static void main(String[] args){	
+		int[] arr = {3, 4, 10, 2, 5};
+		int temp;
+		for(int i=0; i<=3; i++){
+			for(int j=i+1; j<=4; j++){		   
+				if(arr[i] < arr[j]){	
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;		
+				}
+			}							
+		}
+		for(int i=0; i<5; i++){
+			System.out.print(arr[i] + " ");
+		}
+	}
+}
+출력 : 10 5 4 3 2

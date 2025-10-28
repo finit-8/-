@@ -221,3 +221,75 @@ else:
 finally:
 	print("C")
 출력 :
+
+
+
+
+
+
+밑줄에 들어갈 코드는?
+print("파이썬 입출력에 대한 문제입니다.")
+num1, num2 = input()._____()
+num1 = int(num1)
+num2 = int(num2)
+print(num1,num2)
+num3 = num1 + num2
+print(num1 + " + "  + num2 + " = " + num3)
+	(※ 입력값은 2와 3이다.)
+출력 결과 : 파이썬 입력출에 대한 문제입니다.
+			2 3
+			2 + 3 = 5
+
+
+
+
+
+★★★
+def fn():
+	print('Hello')
+	return
+	print('Python')
+print(fn())
+출력 : 
+
+
+
+
+
+
+def fn(*args):
+	total = 0
+	for num in args:
+		total += num
+	return total
+print(fn(1,2))			
+print(fn(1,2,3,4))		
+출력 : 
+
+
+
+
+
+★★★
+print(type(1.0)==type(1))
+print(type((1, 2, 3))==type({1, 2, 3}))
+print(type([1, 2, 3])==type(List()))
+print(type("ABC")==type('A'))
+출력 : 
+
+
+
+
+★★★
+a = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+	 0 	 1	 2	 3	 4	 5	 6	 7	 8
+	-9	-8	-7	-6	-5	-4	-3	-2	-1
+print(a[-2:-5:1])			
+print(a[-9:-7:1])			
+print(a[0:2:1])				
+print(a[7:4:-1])			
+print(a[-2:-5:-1])			
+print(a[-2: :-1])			
+print(a[ :-5:-1])			
+print(a[ : :-1])			
+출력 : 
