@@ -611,7 +611,27 @@ int main(){
 	}
 	return 0;
 }
-출력 : bjO
+출력 :
+★★★
+#include <stdio.h>
+void fn(char *str){
+	int hash[256] = {0};
+	int index = 0, i;
+	for(i=0; str[i]; i++){			
+		if(hash[str[i]] == 0){		
+			hash[str[i]]++;			
+			str[index++] = str[i];	
+		}							
+	}											
+	str[index] = '\0';
+}
+int main(){
+	char str[] = "banana";
+	fn(str);
+	printf("%s\n", str);
+	return 0;
+}
+출력 : 
 
 
 
@@ -1364,3 +1384,177 @@ int main(){
 	return 0;
 }
 출력 : 
+
+
+
+
+
+★★★
+#include <stdio.h>
+int main(){
+	int a = 0x6C, b=071;
+	printf("%d %d", a | b, a & b);
+	return 0;
+}
+
+#include <stdio.h>
+int main(){
+    int a = 0x55;   
+    int b = 0123;   
+    printf("%d %d", ~a, a ^ b);
+    return 0;
+}
+출력 : 
+
+#include <stdio.h>
+int main(){
+    int a = 0x0F;  
+    int b = a << 3; 
+    int c = 0170;
+    printf("%d %d", b, c);
+    return 0;
+}
+출력: 
+
+#include <stdio.h>
+int main() {
+    int a = 33;
+    printf("%d %d\n", a >> 1, a / 2);
+    return 0;
+}		
+출력: 
+
+
+
+
+
+
+#include <stdio.h>
+typedef int llong;
+int fn(int base, int exp){
+	llong base2;
+	int i = 0;
+	if(exp == 1){
+		return base;
+	} else if(base == 0){
+		return 1;
+	}
+	if(exp % 2 == 0){
+		base2 = fn(base, exp/2);
+		return base2*base2;
+	} else {
+		base2 = fn(base, (exp-1)/2);		
+		return (base2*base2)*base2;
+	}
+}
+int main() {
+	llong result = fn(3, 3);
+	printf("%d\n", result);
+	return 0;
+}
+출력 : 
+
+
+
+
+
+
+★★★
+#include <stdio.h>
+int main() {
+	float a = 3.14;
+	printf("%.2f\n", a);
+	printf("%5.1f\n", a);
+	printf("%05.1f\n", a);
+	printf("%-05.1f\n", a);
+	return 0;
+}
+출력 :
+
+
+
+
+
+
+★★★
+x가 100번지이고, int는 4바이트 일 때 출력
+#include <stdio.h>
+int main() {
+	int x[10][10] = {0};
+	int (*p)[10] = x;
+	int *q = x[4];
+	p++;
+	q--;
+	printf("%d %d", p, q);
+	return 0;
+}
+출력 : 
+
+
+
+
+
+
+★★★
+#include <stdio.h>
+#include <string.h>
+char n[10];
+char *soojebi(){
+	static int i = 0;
+	switch(i){
+	case 0: strncpy(n, "임꺽정", 10); break;
+	case 1: strncpy(n, "장길산", 10); break;
+	default: strncpy(n, "홍길동", 10); 
+	}
+	i++;
+	return n;
+}
+int main() {
+	char* p1 = soojebi();
+	char* p2 = soojebi();
+	char* p3 = soojebi();
+	printf("%s\n", p1);
+	printf("%s\n", p2);
+	printf("%s\n", p3);
+	return 0;
+}
+출력 : 
+
+
+
+
+
+
+
+5개의 숫자 중 홀수의 개수가 몇 개 인지 알려주는 코드로, 밑줄에 들어갈 코드는?
+#include <stdio.h>
+int main() {
+	int i, cnt=0;
+	int arr[5];
+	for(i=0;i<5;i++){
+		scanf("%d", &arr[i]);
+	}
+	for(i=0;i<5;i++){
+		if(arr[i] % 2 ___ 0){		 
+			cnt = cnt + 1;
+		}
+	}
+	printf("%d", cnt);
+	return 0;
+}
+
+
+
+
+
+
+
+#include <stdio.h>
+int main(){
+	int a = 5, b = 10, c = 15;
+	int *arr[3] = {&a, &b, &c};
+	int **ptr = arr;
+	printf("%d\n", *ptr[0] + *(arr[1]) - **(ptr+2));
+	return 0;
+}
+출력 :

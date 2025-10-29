@@ -250,6 +250,20 @@ def fn():
 	return
 	print('Python')
 print(fn())
+출력 :
+class A:
+	def fn(self):
+		print("A")
+class B(A):
+	def fn(self):
+		pass
+class C(A):
+	def fn(self):
+		print("B")
+b=B()
+c=C()
+b.fn()
+c.fn()
 출력 : 
 
 
@@ -280,6 +294,7 @@ print(type("ABC")==type('A'))
 
 
 
+
 ★★★
 a = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 	 0 	 1	 2	 3	 4	 5	 6	 7	 8
@@ -293,3 +308,48 @@ print(a[-2: :-1])
 print(a[ :-5:-1])			
 print(a[ : :-1])			
 출력 : 
+
+
+
+
+
+★★★
+class Person:
+	def info(self, num):
+		for i in range(1, 10):
+			num += i			
+		print(num, end='')		
+class Student(Person):
+	def info(self, num):
+		super().info(num)
+		print(num, end='')		
+a = Student()
+a.info(30)
+출력 : 
+
+
+
+
+
+★★★
+def soojebi(num):
+	if num < 2:
+		print(num, end='')
+	else:
+		soojebi(num//2)
+		print(num%2, end='')
+soojebi(6)
+출력 : 
+
+
+
+
+
+
+def soojebi():
+	a = (1, 2, 3, [4, 5], 6)
+	a[3].append(7)
+	return a
+result = soojebi()
+print(result)
+출력 :

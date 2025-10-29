@@ -861,4 +861,115 @@ public class Soojebi{
 		}
 	}
 }
-출력 : 10 5 4 3 2
+출력 : 
+
+
+
+
+
+
+★★★
+interface A{
+	void fn(String s);
+}
+class B implements A{
+	public void fn(String s){
+		System.out.print(s+"B");
+	}
+}
+class C implements A{
+	public void fn(String s){
+		System.out.print("C"+s);
+	}
+}
+public class Soojebi{
+	public static void main(String[] args){
+		A b = new B();
+		A c = new C();
+		B d = new B();
+		String s1 = "Soo je bi";
+		String[] s2 = s1.split(" ");
+		int i = 0;
+		b.fn(s2[i++]);		
+		c.fn(s2[i++]);		
+		d.fn(s2[i++]);		
+	}
+}
+출력 : 
+
+
+
+
+
+
+
+class A{
+	int a;
+	public A(int a){
+		this.a=a;							
+	}
+	public void display(){
+		System.out.println("a="+a);
+	}
+}
+class B extends A{
+	int a;
+	public B(int a){
+		super(a/2);
+		this.a=a;							
+	}
+	public void display(){
+		System.out.println("a="+a);			
+	}
+}
+public class Soojebi{
+	public static void main(String[] args){
+		A a = new B(10);
+		B b = new B(40);
+		a.display();
+		b.display();
+		System.out.println(a.a + "" + b.a);			
+	}
+}
+출력 : 
+
+
+
+
+
+
+
+★★★
+class A{
+	public A(){
+		System.out.print("A");
+		method();
+	}
+	public void method(){
+		System.out.print("B");
+	}
+}
+class B extends A{
+	public B(){
+		System.out.print("C");
+	}
+	public void method(){
+		System.out.print("D");
+	}
+}
+class C extends B{
+	int value = 10;
+	public C(){
+		System.out.print("E");
+		method();
+	}
+	public void method(){
+		System.out.print(value);
+	}
+}
+public class Soojebi{
+	public static void main(String[] args){
+		C c = new C();
+	}
+}
+출력 : ㄸ10
