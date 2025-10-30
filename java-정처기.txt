@@ -972,4 +972,251 @@ public class Soojebi{
 		C c = new C();
 	}
 }
-출력 : ㄸ10
+출력 : 
+
+
+
+
+
+
+
+public class Soojebi{
+	public static void main(String[] args){	
+		int[] arr = {3, 5, 4, 2, 1};
+		int i=0;
+		int temp=0;
+		do{
+			int j = i;
+			do{
+				if(arr[i] > arr[j]){
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+				j++;
+			} while (j<5);					
+			i++;
+		} while (i<4);
+		for(int i=0; i<5; i++){
+			System.out.printf(arr[i] + " ");
+		}
+	}
+}
+출력 : 
+
+
+
+
+
+
+
+★★★
+public class Soojebi{
+	public static void main(String[] args){	
+		List<String> list = new LinkedList<String>();
+		list.add("Hello");
+		list.add("Hello");
+		list.add(1, "World");
+		System.out.print(list);
+	}
+}
+출력 : {Hello, World, Hello}
+
+
+
+
+
+
+
+abstact class Soojebi{
+	abstact String getName();
+}
+class Soojebi1 extends Soojebi{
+	String getName(){
+		return "soojebe1";
+	}
+}
+class Soojebi2 extends Soojebi{
+	String getName(){
+		return "soojebe2";
+	}
+}
+abstact class SuperSoojebiFactory{
+	abstact Soojebi createSoojebi(String name);
+}
+class SoojebiFactory extends SuperSoojebiFactory{
+	Soojebi createSoojebi(String name){
+		switch(name){
+		case "soojebe1":
+			return new Soojebi1();
+		case "soojebe2":
+			return new Soojebi2();
+		}
+		return null;
+	}
+}
+class SoojebiMain{
+	public static void main(String[] args){
+		SoojebiFactory sf = new SoojebiFactory();
+		Soojebi s1 = sf.createSoojebi("Soojebi1");
+		Soojebi s2 = sf.createSoojebi("Soojebi2");
+		System.out.println(s1.getName() + s2.getName());
+	}
+}
+출력 :
+
+
+
+
+
+
+
+★★★
+public class Main {
+    public static void main(String[] args) {
+        new Child();
+        System.out.println(Parent.total);
+    }
+}
+class Parent {
+    static int total = 0;
+    int v = 1;
+    public Parent() {
+        total += (++v);				
+        show();    					
+    }
+    public void show() {
+        total += total;
+    }
+}
+class Child extends Parent {
+    int v = 10;
+ 
+    public Child() {
+        v += 2;						
+        total += v++;				
+        show();						
+    }
+    @Override
+    public void show() {			
+        total += total * 2;			
+    }
+}
+출력 : 
+
+
+
+
+
+
+
+★★★
+public class Main {
+    public static void main(String[] args) {
+        int[] data = {3, 5, 8, 12, 17};
+        System.out.println(func(data, 0, data.length - 1));
+    }
+    static int func(int[] a, int st, int end) {						
+        if (st >= end) return 0;
+        int mid = (st + end) / 2;												
+        return a[mid] + Math.max(func(a, st, mid), func(a, mid + 1, end));		
+    } 
+}
+출력 : 
+
+
+
+
+
+
+
+
+★★★
+public class Main {
+	public static void main(String[] args) {
+		System.out.println(calc("5"));
+	}
+	static int calc(int value) {
+		if (value <= 1) return value;
+		return calc(value - 1) + calc(value - 2);
+	}
+	static int calc(String str) {
+		int value = Integer.valueOf(str);
+		if (value <= 1) return value;
+		return calc(value - 1) + calc(value - 3);
+	}
+}
+
+
+
+
+
+
+
+
+public class Main {
+    public static void change(String[] data, String s){
+        data[0] = s;
+        s = "Z";
+    }
+    public static void main(String[] args) {
+        String data[] = { "A" };
+        String s = "B";
+        change(data, s);
+        System.out.print(data[0] + s);
+    }
+}
+출력 : 
+
+
+
+
+
+
+
+
+public class Main {
+    static interface F {
+        int apply(int x) throws Exception;
+    }
+    public static int run(F f) {
+        try {
+            return f.apply(3);
+        } catch (Exception e) {
+            return 7;
+        }
+    }
+    public static void main(String[] args) {
+        F f = (x) -> {
+            if (x > 2) {
+                throw new Exception();			
+            }
+            return x * 2;
+        };
+        System.out.print(run(f) + run((int n) -> n + 9));
+    }
+}
+출력 : 
+
+
+
+
+
+
+public class Main{
+    public static class Parent {
+        public int x(int i) { return i + 2; }
+        public static String id() { return "P";}
+    }
+    public static class Child extends Parent {
+        public int x(int i) { return i + 3; }
+        public String x(String s) { return s + "R"; }
+        public static String id() { return "C"; }
+    }
+    public static void main(String[] args) {
+ 
+        Parent ref = new Child();
+        System.out.println(ref.x(2) + ref.id());
+    }
+}
+출력 : 
