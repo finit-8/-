@@ -1220,3 +1220,52 @@ public class Main{
     }
 }
 출력 : 
+
+
+
+
+
+★★★
+public class Main{
+    public static class Parent {
+        public int x(int i) { return i + 2; }
+        public static String id() { return "P";}  
+    }
+    public static class Child extends Parent {
+        public int x(int i) { return i + 3; }
+        public String x(String s) { return s + "R"; }
+        public static String id() { return "C"; }
+    }
+    public static void main(String[] args) {
+        Parent ref = new Child();
+        System.out.println(ref.x(2) + ref.id());
+    }
+}
+출력 :
+
+
+
+
+
+
+★★★
+public class Main{
+    public static class BO {
+        public int v;
+        public BO(int v) {
+            this.v = v;
+        }
+    }
+    public static void main(String[] args) {
+        BO a = new BO(1);
+        BO b = new BO(2);
+        BO c = new BO(3);
+        BO[] arr = {a, b, c};
+        BO t = arr[0];				
+        arr[0] = arr[2];			
+        arr[2] = t;					
+        arr[1].v = arr[0].v;		
+        System.out.println(a.v + "a" + b.v + "b" + c.v);
+    }
+}
+출력 : 
