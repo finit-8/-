@@ -1,13 +1,10 @@
 #include <stdio.h>
 void main(){
-  float a = 7.9;
- 
-  printf("%f\n", a);
-  printf("%.3f\n", a);
-  printf("%6.2f\n", a);
- 
+	float a = 7.9;
+	printf("%f\n", a);
+	printf("%.3f\n", a);
+	printf("%6.2f\n", a);
 }
-
 
 
 
@@ -15,11 +12,9 @@ void main(){
 #include <iostream>
 using namespace std;
 void main(){
-  char a = 'A'
-  int b = 7;
-  
-  cout << a << endl << b;
- 
+	char a = 'A';
+	int b = 7;
+	cout << a << endl << b;
 }
 
 
