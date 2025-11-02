@@ -1,3 +1,4 @@
+★ 
 #include <stdio.h>
 void main(){
 	float a = 7.9;
@@ -30,7 +31,7 @@ void ary(int a[]){
         temp=a[j];
         a[j]=a[j+1];
         a[j+1]=temp;
-      }
+      }						
 }
  int main() {
    int a[]={85, 75, 50, 100, 95};
@@ -46,16 +47,15 @@ void ary(int a[]){
 
 #include <iostream>
 print Value{
-  a,
-  b,
-  c = 7,
-  d
+	a;
+	b;
+	c = 7;
+	d;
 };  
- 
 void main(){
-  print Value value;
-  value = d;
-  std::cout << value;  
+	print Value value;
+	value = d;
+	std::cout << value;  
 }
 
 
@@ -72,13 +72,12 @@ struct stName {
 int main() {
     struct stName st[3] = { {"stName1", 95, 88}, {"stName2", 84, 91}, {"stName3", 86, 75} };
     struct stName* p;
-    p = &st[0];
- 
-    (p + 1)->hab = (p + 1)->os + (p + 2)->db;
-    (p + 1)->hhab = (p + 1)->hab + p->os + p->db;
- 
-    printf("%d", (p + 1)->hab + (p + 1)->hhab);
+    p = &st[0];										
+	(p + 1)->hab = (p + 1)->os + (p + 2)->db;		
+    (p + 1)->hhab = (p + 1)->hab + p->os + p->db;	
+    printf("%d", (p + 1)->hab + (p + 1)->hhab);		
 }
+출력 : 
 
 
 
@@ -87,11 +86,10 @@ int main() {
 
 #include <stdio.h>
 void main(){
-  int a[5] = {3,1};
-  int i;
- 
-  for(i=0; i<5; i++)
-    printf("%d\n", a[i]);
+	int a[5] = {3,1};
+	int i;
+	for(i=0; i<5; i++)
+	printf("%d\n", a[i]);
 }
 
 
@@ -104,48 +102,45 @@ int main() {
     struct ary {
         char name[10];
         int age;
-    } a[] = { {"Kim", 28}, {"Lee", 38}, {"Park", 42}, {"Choi", 31} };
- 
+    }; 
+	a[] = { {"Kim", 28}, {"Lee", 38}, {"Park", 42}, {"Choi", 31} };
     struct ary *p;
     p = a;
     p++;
     printf("%s\n", p->name);
     printf("%d\n", p->age);
 }
-출력 :
+출력 : 
 
 
 
 
 
 
+★
 #include <stdio.h>
 main(){
-  char inputData [50];
-  scanf("%s", inputData );
-  printf("%.4s", inputData );
-  printf("%3.2s", inputData );
+	char inputData [50];
+	scanf("%s", inputData );
+	printf("%.4s", inputData );
+	printf("%3.2s", inputData );
 }
 입력 : Hello, World
-출력 :
+출력 : 
  
 
 
 
 
 
-
-
+★ 괄호 안에 알맞은 코드는? (단, 한 개의 식으로 작성)
 #include <stdio.h>
 main(){
- 
-  float a = 3.45678f;
-  double b = 0.0561214;
-  (     )
-  
+	float a = 3.45678f;
+	double b = 0.0561214;
+	(     )
+}
 출력 : [a]=3.46 / [b]=5.612e-02
-괄호안에 입력은? (단, 한 개의 식으로 작성)
-
 
 
 
@@ -157,12 +152,11 @@ main(){
 
 #include <stdio.h>
 main(){
- 
-  int i, j;
-  scanf("%o#x", &i, &j);
-  printf(w"%d %d", i, j)
-  
-입력 : 15#22
+	int i, j;
+	scanf("%o#x", &i, &j);
+	printf("%d %d", i, j);
+}
+입력 : 15#22				
 출력은 ?
  
  
@@ -171,19 +165,15 @@ main(){
  
  
  
- #include <stdio.h>
- 
+#include <stdio.h>
 int main() {
     int ary[3];
     int s = 0;
- 
     *(ary + 0) = 1;					==> 
     ary[1] = *(ary + 0) + 2;		==> 
     ary[2] = *ary + 3;				==> 
- 
     for (int i = 0; i < 3; i++)
         s = s + ary[i];				==> 
- 
     printf("%d", s);				==> 
 }
 출력:
@@ -192,15 +182,13 @@ int main() {
 
 
 
-
 #include <stdio.h>
 main(){
-  int i = 5, j = 5, k = 20;
-  i /= j;		
-  j -= i;		
-  k %= j;		
-  printf("%d, %d, %d\n", i, j, k);
-
+	int i = 5, j = 5, k = 20;
+	i /= j;		
+	j -= i;		
+	k %= j;		
+	printf("%d, %d, %d\n", i, j, k);
 }
 출력:
 
@@ -214,19 +202,18 @@ struct node {
 	int p; 
 	struct node* n; 
 };
- 
 int main() { 
 	struct node a = {1, NULL}; 
 	struct node b = {2, NULL}; 
 	struct node c = {3, NULL}; 
-	
 	a.n = &b; b.n = &c; c.n = NULL; 					
 	c.n = &a; a.n = &b; b.n = NULL; 					
 	struct node* head = &c; 
 	printf("%d %d %d", head->p, head->n->p, head->n->n->p); 		
 	return 0; 
 }
-출력: 
+출력:
+
 
 
 
@@ -237,7 +224,6 @@ void main(){
 	int i,j;
 	int temp;
 	int a[5] = {75,95,85,100,50};
-
 	for(i=0; i<4; i++){	
 		for(j=0; j<4-i; j++){
 			if(a[j] > a[j+1]){			
@@ -247,7 +233,6 @@ void main(){
 			 }
 		   }
 		}
-		
 	for(i=0; i<5; i++){
 		printf("%d", a[i]);
 	}
@@ -258,25 +243,23 @@ void main(){
   
 
 
-https://chatgpt.com/c/68eee239-0314-8324-8deb-671124bca62c
+★ 
 #include <stdio.h> 
 #include <stdlib.h>   
 struct node {     
 	char c;     
 	struct node* p; 
 };   
-
 struct node* func(char* s) {     
 	struct node* h = NULL, *n;          							
-	while(*s) {         
-		n = malloc(sizeof(struct node));         
-		n->c = *s++;         
-		n->p = h;         
-		h = n;    
+	while(*s) {         						
+		n = malloc(sizeof(struct node));       
+		n->c = *s++;         				
+		n->p = h;         					
+		h = n;    							
 	}          
 	return h; 
 }   
-
 int main() {     
 	struct node* n = func("BEST");          
 	while(n) {         						
@@ -299,10 +282,10 @@ int main(){
    printf("%d",res);
    return 0;
 }
-int mp(int base, int exp) {
+int mp(int base, int exp) {			
    int res = 1;
-   for(int i=0; i < exp; i++){
-      res = res * base;							
+   for(int i=0; i<exp; i++){		
+      res = res * base;						
    }
    return res;
 }
@@ -331,6 +314,9 @@ int main(){
 
 
 
+
+
+★
 #include <stdio.h>
 int main(){
 	int *arr[3];								
@@ -346,15 +332,14 @@ int main(){
 
 
 
+
 #include <stdio.h>
 struct jsu {
-  char name[12];
-  int os, db, hab, hhab;
+	char name[12];
+	int os, db, hab, hhab;
 };
 int main(){
-	struct jsu st[3] = {{"데이터1", 95, 88}, 
-						{"데이터2", 84, 91}, 
-						{"데이터3", 86, 75}};
+	struct jsu st[3] = {{"데이터1", 95, 88}, {"데이터2", 84, 91}, {"데이터3", 86, 75}};
 	struct jsu* p;
 	p = &st[0];
 	(p + 1)->hab = (p + 1)->os + (p + 2)->db;		
@@ -367,37 +352,34 @@ int main(){
 
 
 
-
+number를 역순으로 출력하는 코드이다. 다음 괄호에 들어갈 코드는?		
 #include <stdio.h>
 int main() {
-  int number = 1234;
-  int div = 10;
-  int result = 0;
-  while (number ( 1 ) 0) {						
-  
-    result = result * div;							
-    result = result + number ( 2 ) div;				
-    number = number ( 3 ) div;						
-  
-  }
- 
-  printf("%d", result);
-return 0;
+	int number = 1234;
+	int div = 10;
+	int result = 0;
+	while (number ( 1 ) 0) {						
+		result = result * div;							
+		result = result + number ( 2 ) div;				
+		number = number ( 3 ) div;						
+	}
+	printf("%d", result);
+	return 0;
 }
 
 
 
 
 
-
+★
 #include <stdio.h> 
 int isPrime(int number) { 
 	int i; 
 	for (i=2; i<number; i++) { 
 		if (number % i == 0) return 0; 
 	} 
-	return 1; 
-} 
+	return 1;
+}
 int main(void) { 
 	int number = 13195, max_div=0, i; 
 	for (i=2; i<number; i++) 
@@ -406,7 +388,6 @@ int main(void) {
 	return 0; 
 }
 출력 : 
-
 
 
 
@@ -463,29 +444,30 @@ int n;
 int k;
 int s;
 int el = 0;
-  for(n=6; n<=30; n++){
-    s=0;
-    k=n/2;							
-    for(int j=1; j<=k; j++){		
-      if(n%j==0){				
-        s=s+j;				
-      }
-    }
-    if(s==n){					
+for(n=6; n<=30; n++){			
+	s=0;
+	k=n/2;							
+	for(int j=1; j<=k; j++){	
+	  if(n%j==0){					
+		s=s+j;					
+	  }
+	}
+	if(s==n){					
 		el++;						
-    }
-  }
-  printf("%d", el);
+	}
+}
+printf("%d", el);
   
   
   
   
   
-  
+
+★
 #include <stdio.h>
 int main(){
 	int a[3][3] = {1,2,3,4,5,6,7,8,9};
-	int *p = a[1]+2;					
+	int *p = a[1]+2;				
 	int *q = &a[0][1];									
 	printf("%d", p[1]);					
 	printf("%d", q[2]);					
@@ -496,6 +478,7 @@ int main(){
 
 
 
+★
 #include <stdio.h>
 int add(int i, int j) {
 	return i+j;
@@ -505,7 +488,7 @@ int sub(int i, int j) {
 }
 int main(){
 	int(*pf)(int, int);
-	___1___;
+	___1___;					
 	printf("%d", pf(5,4));		
 	___2___;
 	printf("%d", pf(5,4));
@@ -526,6 +509,9 @@ int main(){
 	printf("%d", a|b);		
 	return 0;
 }
+출력 :
+
+
 
 
 
@@ -539,9 +525,10 @@ void main(){
     printf("%c\n" , *(p+3));		
     printf("%c\n" , *p+2);
 }
+★
 #include <stdio.h>
 int main(){
-	char a[6] = "hello";
+	char a[6] = "hello";		
 	printf("%s", a+2);			
 	printf("%c", a[1]+2);		
 	printf("%c", *a+1);			
@@ -549,6 +536,7 @@ int main(){
 	printf("%c", a[1]);			
 	return 0
 }
+★
 #include <stdio.h>
 int main() {
     char arr[7] = "python";
@@ -579,12 +567,12 @@ int main(int argc, char *argv[]){
 #include <string.h>
 void fn(char* str){
 	char t;
-	int len = strlen(str);							
-	char* p1 = str;									
-	char* p2 = str + len - 1;						
-	while(p1<p2){
-		if(*p1 >= 'A' && *p1 <= 'Z'){
-			*p1 = *p1 + ('a' - 'A');						
+	int len = strlen(str);						7			
+	char* p1 = str;								S	
+	char* p2 = str + len - 1;					i	
+	while(p1<p2){								
+		if(*p1 >= 'A' && *p1 <= 'Z'){			
+			*p1 = *p1 + ('a' - 'A');			s			
 		}
 		else if(*p1 >= 'a' && *p1 <= 'z'){								
 			*p1 = *p1 - ('a' - 'A');											
