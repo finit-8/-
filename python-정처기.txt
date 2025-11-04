@@ -8,6 +8,7 @@ print(len(s & set(dst.values())))
 
 
 
+
 a={'일본','중국','한국'}
 a.add('베트남')
 a.add('중국')
@@ -38,7 +39,6 @@ print(lol[2][1])
 
 
 
-
 class good :
 	li = ["seoul", "kyeonggi","inchon","daejeon","daegu","pusan"]
 g = good()
@@ -52,14 +52,15 @@ print(str01)
 
 
 
-
+★
 a = 100
 result = 0
-for i in range(1,3);
+for i in range(1,3):
    result = a >> i
    result = result + 1
 print(result)
 출력 : 
+
 
 
 
@@ -94,7 +95,7 @@ print(b+c)
 
 
 TestList = [1,2,3,4,5]
-TestList = list(map(lambda num : num + 100, TestList)))
+TestList = list(map(lambda num : num + 100, TestList))
 print(TestList)
 출력 : 
 
@@ -102,18 +103,19 @@ print(TestList)
 
 
 
+★
 a = ["123", "456", "789"]
 str = "0"
 for i in a:
 	str = i[1] + str + i[2]
 print(str)
-출력 :
+출력 : 
 
 
 
 
 
-
+★
 i=0
 sum=0
 while i < 7:
@@ -125,6 +127,7 @@ while i < 7:
 	else:
 		sum *= i
 print(sum)
+출력 : 
 
 
 
@@ -134,7 +137,7 @@ print(sum)
 a = "%s%s" % ("soojebi"[0:2], "soojebi"[3:4])
 b = 1111
 print("%s%d" % (a*2, b*2))
-출력 :
+출력 : 
 
 
 
@@ -144,13 +147,13 @@ print("%s%d" % (a*2, b*2))
 def soojebi(begin, diff, n):
 	cnt=1
 	ret=begin				
-	while true:
+	while True:
 		cnt+=1				
 		ret*=diff			
 		if cnt == n:		
 			return ret
 print(soojebi(1, 3, 4))
-출력 :
+출력 : 
 
 
 
@@ -162,18 +165,14 @@ class A:
 		self.x = self.x + x
 	def fn(self, x):
 		print("{0}{1}".format(self.x, x))
-		
 class B(A):
 	x = "XYZ"
 	def fn(self, x, y):
 		print("{0}{1}{2}".format(self.x,x,y))
-
 a = A("HI")				
 a.fn("J")				
 b=B("ST")				
 b.fn("UV", "W")			
-
-
 
 
 
@@ -186,7 +185,6 @@ print(x)
 
 
 
-
 ★★★
 x = [97, 98, 0]
 print(all(x))			
@@ -194,6 +192,7 @@ print(any(x))
 print(chr(x[1]))		
 print(divmod(5,2))		
 출력 : 
+
 
 
 
@@ -220,13 +219,13 @@ else:
 	print("B")
 finally:
 	print("C")
-출력 :
+출력 : 
 
 
 
 
 
-
+★★★
 밑줄에 들어갈 코드는?
 print("파이썬 입출력에 대한 문제입니다.")
 num1, num2 = input()._____()
@@ -250,7 +249,7 @@ def fn():
 	return
 	print('Python')
 print(fn())
-출력 :
+출력 : 
 class A:
 	def fn(self):
 		print("A")
@@ -284,10 +283,11 @@ print(fn(1,2,3,4))
 
 
 
+
 ★★★
 print(type(1.0)==type(1))
 print(type((1, 2, 3))==type({1, 2, 3}))
-print(type([1, 2, 3])==type(List()))
+print(type([1, 2, 3])==type(list()))
 print(type("ABC")==type('A'))
 출력 : 
 
@@ -308,7 +308,6 @@ print(a[-2: :-1])
 print(a[ :-5:-1])			
 print(a[ : :-1])			
 출력 : 
-
 
 
 
@@ -334,10 +333,10 @@ a.info(30)
 ★★★
 def soojebi(num):
 	if num < 2:
-		print(num, end='')
+		print(num, end='')				
 	else:
-		soojebi(num//2)
-		print(num%2, end='')
+		soojebi(num//2)					
+		print(num%2, end='')				
 soojebi(6)
 출력 : 
 
@@ -348,11 +347,11 @@ soojebi(6)
 
 def soojebi():
 	a = (1, 2, 3, [4, 5], 6)
-	a[3].append(7)
+	a[3].append(7)				
 	return a
 result = soojebi()
 print(result)
-출력 :
+출력 : 
 
 
 
@@ -378,7 +377,7 @@ print(a.getter())
 a = ["Hello", "Python", "World"]
 for i in a:
 	print("abc")
-출력 :
+출력 : 
 
 
 
@@ -391,10 +390,10 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.children = []
-def tree(li):
+def tree(li):			
     nodes = [Node(i) for i in li]
-    for i in range(1, len(li)):
-        nodes[(i - 1) // 2].children.append(nodes[i])
+    for i in range(1, len(li)):							
+        nodes[(i - 1) // 2].children.append(nodes[i])	
     return nodes[0]
 def calc(node, level=0):
     if node is None:
@@ -403,8 +402,8 @@ def calc(node, level=0):
 li = [3, 5, 8, 12, 15, 18, 21]
 root = tree(li)
 print(calc(root)) 
- 
-출력 : 
+출력 : 5
+8
 
 
 
@@ -416,4 +415,4 @@ s = set(dst.values())
 lst[0] = 99 					
 dst[2]=7								
 s.add(99)								
-print(len(s & set(dst.values())))	
+print(len(s & set(dst.values()))	

@@ -1710,7 +1710,7 @@ int main(){
 			
 			
 			
-★★★
+
 #include <stdio.h>
 #include <stdlib.h>
 void set(int** arr, int* data, int rows, int cols) {
@@ -1728,7 +1728,7 @@ int main() {
     }
     set(arr, data, rows, cols);
     for (int i = 0; i < rows * cols; i++) {
-        sum += arr[i / rows][i % cols] * (i % 2 == 0 ? 1 : -1);
+        sum += arr[i / rows][i % cols] * (i % 2 == 0 ? 1 : -1);			
     }
     for(int i=0; i<rows; i++) {
         free(arr[i]);
@@ -1751,23 +1751,23 @@ typedef struct Data {
     int value;
     struct Data *next;
 } Data;
-Data* insert(Data* head, int value) {										
-    Data* new_node = (Data*)malloc(sizeof(Data));
-    new_node->value = value;									
-    new_node->next = head;										
-    return new_node;
+Data* insert(Data* head, int value) {							
+    Data* new_node = (Data*)malloc(sizeof(Data));				
+    new_node->value = value;									1		2	3	4	5
+    new_node->next = head;										NULL	1	2	3	4
+    return new_node;											
 }
-Data* reconnect(Data* head, int value) {							
-    if (head == NULL || head->value == value) return head;			
+Data* reconnect(Data* head, int value) {						
+    if (head == NULL || head->value == value) return head;		
     Data *prev = NULL, *curr = head;								
     while (curr != NULL && curr->value != value) {				
-        prev = curr;
+        prev = curr;											
         curr = curr->next;
     }
     if (curr != NULL && prev != NULL) {
-        prev->next = curr->next;							
-        curr->next = head;									
-        head = curr;										
+        prev->next = curr->next;						
+        curr->next = head;								
+        head = curr;									
     }
     return head;
 }
@@ -1793,9 +1793,9 @@ int main() {
 typedef struct student {
     char* name;
     int score[3];
-} Student;
-int dec(int enc) {																	
-    return enc & 0xA5;
+} Student;										
+int dec(int enc) {								
+    return enc & 0xA5;				
 }
 int sum(Student* p) {																
     return dec(p->score[0]) + dec(p->score[1]) + dec(p->score[2]);
@@ -1805,12 +1805,13 @@ int main() {
     Student* p = s;
     int result = 0;
     for (int i = 0; i < 2; i++) {
-        result += sum(&s[i]);
+        result += sum(&s[i]);		
     }
     printf("%d", result);
     return 0;
 }
 출력 : 
+
 
 
 
@@ -1825,7 +1826,7 @@ typedef struct {
     int rear;
 } Queue;
 void enq(Queue* q, int val){
-    q->a[q->rear] = val; 				
+    q->a[q->rear] = val; 					
     q->rear = (q->rear + 1) % SIZE;		
 }
 int deq(Queue* q) {						
@@ -1836,7 +1837,7 @@ int deq(Queue* q) {
 int main() {
     Queue q = {{0}, 0, 0};
     enq(&q,1); enq(&q,2); deq(&q); enq(&q, 3);
-    int first = deq(&q);							
+    int first = deq(&q);														
     int second = deq(&q);							
     printf("%d 그리고 %d", first, second);			
     return 0;
@@ -1855,11 +1856,11 @@ struct node {
 };
 struct node* func(char* s) {
     struct node* h = NULL, *n;
-    while(*s) {												
-        n = malloc(sizeof(struct node));				
-        n->c = *s++;									
-        n->p = h;										
-        h = n;											
+    while(*s) {															
+        n = malloc(sizeof(struct node));	
+        n->c = *s++;						
+        n->p = h;							
+        h = n;								
     }
     return h;
 }
