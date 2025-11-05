@@ -27,3 +27,389 @@ public class Soojebi{
 	}
 }
 출력 : 
+
+
+
+
+
+★★★
+public class Soojebi{
+	public static int[] arr(int[] a){		
+		int i, j;
+		int sw, temp;
+		int n = 5;														 
+		for(i=0; i<n-1; i++){	
+			sw = i;
+			for(j=i+1; j<n; j++){			
+				if(a[j] > a[sw])		
+					sw = j;					
+			}
+			temp = a[i];										
+			a[i] = a[sw];										
+			a[sw] = temp;										
+		}													
+		return a;
+	}
+	public static void main(String[] args){
+		int i;
+		int[] n = {4, 3, 5, 2, 10};
+		arr(n);
+		for(i=0; i<5; i++)
+			System.out.print(n[i]);
+	}
+}
+출력 : 
+
+
+
+
+
+
+★
+public class Soojebi{
+	public static void main(String[] args){
+		List a = new ArrayList();
+		a.add(2);
+		System.out.print(a);
+		a.add(1);
+		System.out.print(a);
+		a.add(1);
+		System.out.print(a);
+		a.add(1, 3);
+		System.out.print(a);
+		a.remove(2);
+		System.out.print(a);
+		System.out.print(a.get(2));
+		System.out.print(a.size());
+	}
+}
+출력 : 
+
+
+
+
+
+public class Soojebi{
+	public static void main(String[] args){
+		int sum = fact(3, 5);
+		System.out.println(sum);
+	}
+	public static int fact(int a, int b){
+		if(b<a)}
+			return 1;
+		}
+		else{
+			return b * fact(a, b-1);	
+		}
+	}
+}
+출력 : 60
+
+
+
+
+
+★
+public class Soojebi{
+	public static void main(String[] args){
+		int[] numArr = new int[5];
+		int result = 0;
+		for(int i=0; i<5; i++)			
+			numArr[i] = ++i;				
+		for(int i : numArr)
+			result += i;					
+		System.out.printf("%d", result);
+	}
+}
+출력 : 
+
+
+
+
+
+public class Soojebi{
+	public static void main(String[] args){
+		TreeMap<Integer, String> map = new TreeMap<>();
+		map.put(4, "D");
+		map.put(3, "C");
+		map.put(1, "A");
+		map.put(2, "B");
+		System.out.println(map);
+	}
+}
+출력 : 
+
+
+
+
+
+★ 100이하의 자연수 중 가장 큰 소수를 구하는 코드로 빈칸에 알맞는 코드는?
+class Soojebi{
+	public static void main(String[] args){
+		int p = 0;
+		for(int i=2; i<=100; i++){
+			int t = (int)Math.sqrt(i);
+			for(int j=2; j<=t; j++){		
+				if(i%j == 0)				
+					break;
+				if(j==t)
+					p=____;
+			}
+		}
+		System.out.println(p);
+	}
+}
+
+
+
+
+
+
+★
+public class Soojebi{
+	public static void main(String[] args){
+		int[][] a = new int[10][10];
+		int sum = 0;
+		for(int i=5; i<6; i++){
+			for(int j=5; j<8; j++){	
+				a[i][j] = i*j + 15;		
+				sum += a[i][j];			
+			}
+		}
+		double num = sum / a.length;	
+		System.out.print(num);
+	}
+}
+출력 : 
+
+
+
+
+
+
+public class Soojebi{
+	public static void main(String[] args){
+		String str = "WelcomeToSoojebi";
+		String result = str.substring(0, 6).replace('o', 'x') +			
+						str.substring(6, 8).toLowerCase() +					  
+						str.substring(8, 11).repeat(2) +						
+						str.substring(11).toUpperCase();							
+		System.out.println(result);
+	}
+}
+출력 : 
+
+
+
+
+
+★
+class Car{
+	String model = "화물차";
+	Car(){
+		System.out.print("default");
+	}
+	Car(String model){
+		this.model = model;
+	}
+	void getModel(){
+		System.out.print("model : " + this.model);
+	}
+}
+public class Soojebi{
+	public static void main(String[] args){
+		Car c = new Car("승용차");
+		(new Car()).getModel();
+	}
+}
+출력 : 
+
+
+
+
+
+
+★
+public class Soojebi{
+	public static void main(String[] args){
+		int[] arr = {1, 2, 3, 4, 5};
+		rotate(arr);
+		System.out.println(Arrays.toString(arr));		
+	}
+	static void rotate(int[] arr){
+		int n = arr.length;
+		x(arr, 0, n-1);
+	}
+	static void x(int[] arr, int start, int end){		
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+			start++;
+			end--;
+		}
+	}
+}
+출력 : 
+
+
+
+
+
+
+★
+interface Observer{
+	public void update(String msg);
+}
+class SooOb1 implements Observer{
+	public void update(String msg){
+		System.out.println("Soojebi Observer1:" + msg);
+	}
+}
+class SooOb2 implements Observer{
+	public void update(String msg){
+		System.out.println("Soojebi Observer2:" + msg);
+	}
+}
+interface Subject{
+	public void register(Observer o);
+	public void remove(Observer o);
+	public void notify(String msg);
+}
+class SoojebiData implements Subject{
+	private ArrayList<Observer> observers;
+	public SoojebiData(){
+		observers = new ArrayList<Observer>();
+	}
+	public void register(Observer o){						
+		observers.add(o);
+	}
+	public void remove(Observer o){
+		observers.remove(o);
+	}
+	public void notify(String msg){
+		for(Observer o : observers){
+			o.update(msg);
+		}
+	}
+}
+class Soojebi{
+	public static void main(String[] args){
+		SoojebiData sd = new SoojebiData();			
+		Observer o1 = new SooOb1();
+		Observer o2 = new SooOb2();
+		sd.register(o1);
+		sd.register(o2);
+		sd.remove(o1);
+		sd.notify("notify msg");
+		sd.remove(o2);
+	}
+}
+출력 : 
+
+
+
+
+★ 오류가 발생하는 코드는?
+public class Soojebi{
+	public static void main(String[] args){
+		final int x = 1;
+		x = 10;
+		x += 10;
+		x -= 20;
+		x *= 30;
+		x /= 0;
+		System.out.println(x);
+	}
+}
+다음은 오류가 발생하는 코드이다. 코드 발생 줄과 원인은?
+#include <stdio.h>
+int main(){
+	int a[3] = {10, 20, 30};
+	const int *p1 = a+1;		20
+	int const *p2 = a+1;		20
+	int* const p3 = a;			10
+	p1[0] = 15;					
+	p1 = a;
+	printf("%d %d %d", *p1, *p2, *p3);
+	return 0;
+}
+
+
+
+
+
+
+★
+public class Soojebi{
+	public static void main(String[] args){
+		System.out.println("" + 1 + 2);
+		System.out.println(1 + 2 + "");
+	}
+}
+출력 :
+
+
+
+
+
+
+★
+class A {
+	private int a = 5;
+	A(){
+		System.out.print("A");
+	}
+	A(int a){
+		System.out.print("B");
+	}
+	void fn(){
+		System.out.print("C");
+	}
+}
+class B {
+	private int b = 5;
+	B(){
+		System.out.print("D");
+	}
+	B(int b){
+		b=b;
+		System.out.print("E");
+	}
+	void fn(){
+		System.out.print("F"+b);
+	}
+}
+public class Soojebi{
+	public static void main(String[] args){
+		B x = new B(10);
+		x.fn();
+	}
+}
+출력 : 
+
+
+
+
+
+★★★
+public class Soojebi{
+	public static void main(String[] args){
+		int[] arr = {1, 2, 3, 4, 5};
+		int[] temp = {1, 2, 4, 6, 8};
+		int idx = 0;
+		boolean flag;
+		for(int i=0; i<arr.length; i++){			0~4
+			flag = false;				
+			if(arr[i] == temp[i]){					0true	1true	234false
+				flag = true;
+			}
+			if(!flag){								flag가 true면,
+				temp[idx++] = arr[i];				temp[idx] = arr[0] 대입 후 ++
+													temp[idx] = arr[1] 대입 후 ++
+													
+				System.out.print(temp[idx]);
+			}
+		}
+	}
+}
+출력 : 
