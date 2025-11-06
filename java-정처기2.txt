@@ -398,18 +398,55 @@ public class Soojebi{
 		int[] temp = {1, 2, 4, 6, 8};
 		int idx = 0;
 		boolean flag;
-		for(int i=0; i<arr.length; i++){			0~4
+		for(int i=0; i<arr.length; i++){			
 			flag = false;				
-			if(arr[i] == temp[i]){					0true	1true	234false
+			if(arr[i] == temp[i]){					
 				flag = true;
 			}
-			if(!flag){								flag가 true면,
-				temp[idx++] = arr[i];				temp[idx] = arr[0] 대입 후 ++
-													temp[idx] = arr[1] 대입 후 ++
-													
-				System.out.print(temp[idx]);
+			if(!flag){								
+				temp[idx++] = arr[i];				
+				System.out.print(temp[idx]);		
 			}
 		}
+	}
+}
+출력 : 
+
+
+
+
+
+★
+public class Soojebi{
+	public static void main(String[] args){
+		String str = "soojebiisgood"; 13
+		System.out.println(sjbMethod(str));
+	}
+	static String sjbMethod(String str){
+		String result = "";
+		for(int i=0; i<str.length(); i++){				
+			char c = str.charAt(i);
+			if(result.indexOf(c) == -1) {
+				result += c;
+			}
+		}
+		return result;
+	}
+}
+출력 : 
+
+
+
+
+
+★ 최단삼쉬관비리삼대
+public class Soojebi{
+	public static void main(String[] args){
+		int x = 8;
+		int y = 3;
+		int z = 5;
+		int result = (x|y) & (z<<y)%x + z*y-(x^z)/y;
+		System.out.println(result);
 	}
 }
 출력 : 
